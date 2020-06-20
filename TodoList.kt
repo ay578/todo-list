@@ -21,6 +21,8 @@ fun choice() {
         1 -> addTodo()
         2 -> readTodo()
         3 -> editTodo()
+        4 -> deleteTodo()
+        5 -> print("selesai")
     }
 }
 fun addTodo() {
@@ -52,4 +54,13 @@ fun editTodo(){
     var todo = readLine()!!.toString()
     Todos.set(index, todo)
     println("sukses edit todo")
+    choice()
+}
+
+fun deleteTodo(){
+    print("masukan index todo : ")
+    var index= readLine()!!.toInt()
+    Todos.removeAt(index)
+    println("sukses delete todo")
+    choice()
 }
